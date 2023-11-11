@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.2.2/web3.min.js" integrity="sha512-YD0p/mrfISfNjG4WS/8Dx1h6hZx0/IgCFJfQR8lSXf/y29Jy+JcZj1s65/Ar22xBwvK8xe1u1BQ/w2E2Edr22Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./script.js" defer></script>
+</head>
+<body class="w-screen h-screen flex items-center justify-center flex-col gap-9">
+  <h1 class="text-3xl font-bold max-w-[450px] text-center">
+    Connect your Telegram account to the <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">Roulette bot</span>
+  </h1>
+  <form id="telegramConnectionForm" class="relative">
+    <div id="telegramConnectionForm_inputs" class="flex flex-col gap-2">
+      <input
+      class="px-4 py-2 border border-gray-400 rounded w-[450px] max-w-full"
+      type="text"
+      name="telegramId"
+      placeholder="Telegram ID"
+    >
+    <input
+      type="submit"
+      value="Submit"
+      class="px-4 py-2 border border-gray-400 rounded w-[450px] max-w-full bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold hover:from-pink-500 hover:to-yellow-500 cursor-pointer"
+    >
+    </div>
+    <svg id="loader" class="hidden text-blue-500 absolute top-[50%] right-[50%] transform translate-x-1/2 -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+      <rect width="10" height="10" x="1" y="1" fill="currentColor" rx="1">
+        <animate id="svgSpinnersBlocksShuffle30" fill="freeze" attributeName="x" begin="0;svgSpinnersBlocksShuffle3b.end"
+          dur="0.2s" values="1;13" />
+        <animate id="svgSpinnersBlocksShuffle31" fill="freeze" attributeName="y" begin="svgSpinnersBlocksShuffle38.end"
+          dur="0.2s" values="1;13" />
+        <animate id="svgSpinnersBlocksShuffle32" fill="freeze" attributeName="x" begin="svgSpinnersBlocksShuffle39.end"
+          dur="0.2s" values="13;1" />
+        <animate id="svgSpinnersBlocksShuffle33" fill="freeze" attributeName="y" begin="svgSpinnersBlocksShuffle3a.end"
+          dur="0.2s" values="13;1" />
+      </rect>
+      <rect width="10" height="10" x="1" y="13" fill="currentColor" rx="1">
+        <animate id="svgSpinnersBlocksShuffle34" fill="freeze" attributeName="y" begin="svgSpinnersBlocksShuffle30.end"
+          dur="0.2s" values="13;1" />
+        <animate id="svgSpinnersBlocksShuffle35" fill="freeze" attributeName="x" begin="svgSpinnersBlocksShuffle31.end"
+          dur="0.2s" values="1;13" />
+        <animate id="svgSpinnersBlocksShuffle36" fill="freeze" attributeName="y" begin="svgSpinnersBlocksShuffle32.end"
+          dur="0.2s" values="1;13" />
+        <animate id="svgSpinnersBlocksShuffle37" fill="freeze" attributeName="x" begin="svgSpinnersBlocksShuffle33.end"
+          dur="0.2s" values="13;1" />
+      </rect>
+      <rect width="10" height="10" x="13" y="13" fill="currentColor" rx="1">
+        <animate id="svgSpinnersBlocksShuffle38" fill="freeze" attributeName="x" begin="svgSpinnersBlocksShuffle34.end"
+          dur="0.2s" values="13;1" />
+        <animate id="svgSpinnersBlocksShuffle39" fill="freeze" attributeName="y" begin="svgSpinnersBlocksShuffle35.end"
+          dur="0.2s" values="13;1" />
+        <animate id="svgSpinnersBlocksShuffle3a" fill="freeze" attributeName="x" begin="svgSpinnersBlocksShuffle36.end"
+          dur="0.2s" values="1;13" />
+        <animate id="svgSpinnersBlocksShuffle3b" fill="freeze" attributeName="y" begin="svgSpinnersBlocksShuffle37.end"
+          dur="0.2s" values="1;13" />
+      </rect>
+    </svg>
+  </form>
+</body>
+</html>
