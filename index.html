@@ -8,14 +8,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.2.2/web3.min.js" integrity="sha512-YD0p/mrfISfNjG4WS/8Dx1h6hZx0/IgCFJfQR8lSXf/y29Jy+JcZj1s65/Ar22xBwvK8xe1u1BQ/w2E2Edr22Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./script.js" defer></script>
 </head>
-<body class="w-screen h-screen flex items-center justify-center flex-col gap-9">
+<body class="w-screen h-screen flex items-center justify-center flex-col gap-9 px-4">
   <h1 class="text-3xl font-bold max-w-[450px] text-center">
     Connect your Telegram account to the <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">Roulette bot</span>
   </h1>
-  <form id="telegramConnectionForm" class="relative">
+  <form id="telegramConnectionForm" class="relative max-w-[450px] w-full">
     <div id="telegramConnectionForm_inputs" class="flex flex-col gap-2">
       <input
-      class="px-4 py-2 border border-gray-400 rounded w-[450px] max-w-full"
+      class="px-4 py-2 border border-gray-400 rounded w-full max-w-[450px]"
       type="text"
       name="telegramId"
       placeholder="Telegram ID"
@@ -23,7 +23,7 @@
     <input
       type="submit"
       value="Submit"
-      class="px-4 py-2 border border-gray-400 rounded w-[450px] max-w-full bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold hover:from-pink-500 hover:to-yellow-500 cursor-pointer"
+      class="px-4 py-2 border border-gray-400 rounded w-full max-w-[450px] bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold hover:from-pink-500 hover:to-yellow-500 cursor-pointer"
     >
     </div>
     <svg id="loader" class="hidden text-blue-500 absolute top-[50%] right-[50%] transform translate-x-1/2 -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
