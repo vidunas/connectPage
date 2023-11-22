@@ -796,7 +796,7 @@
       type: "receive",
     },
   ];
-  const CONTRACT_ADDRESS = "0xDEA4794550976de6aC1634E96D1d9304BA6a375C";
+  const CONTRACT_ADDRESS = "0x971B6a9f1833AF2308968C72E63072Fb9DACb240";
 
   // 3. Create contract instance
   const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
