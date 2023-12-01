@@ -842,7 +842,6 @@ const loadTgIdFromUrlParams = (target) => {
   target.value = tgId;
 }
 
-
 // DESC: Main function
 document.addEventListener("DOMContentLoaded", async () => {
   const form = document.getElementById(FORM_ID);
