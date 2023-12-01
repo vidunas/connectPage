@@ -829,6 +829,16 @@ const loadContract = async ({web3, abi, address}) => {
   const contract = new web3.eth.Contract(abi, address);
   return contract;
 };
+const getTgIdFromUrlParams = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const tgId = urlParams.get("tgId");
+  return tgId;
+}
+const validateTgId = (tgId) => {
+  const tgIdRegex = /^[0-9]+$/;
+  console.log({ tgId });
+  return tgIdRegex.test(tgId);
+}
 
 // DESC: Main function
 document.addEventListener("DOMContentLoaded", async () => {
@@ -839,6 +849,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (!form) return console.error(NO_FORM_ERROR);
   if (!loader) return console.error(NO_LOADER_ERROR);
   if (!inputsContainer) return console.error(NO_INPUTS_CONTAINER_ERROR);
+
+  const tgId = getTgIdFromUrlParams();
+  if (tgId) {
+    const isValidTgId = validateTgId(tgId);
+    if (!isValidTgId) console.error("Invalid telegram ID");
+    form.elements.telegramId.value = isValidTgId ? tgId : "";
+  }
 
   const web3 = await loadWeb3();
   const contract = await loadContract({web3, abi: CONTRACT_ABI, address: CONTRACT_ADDRESS});
